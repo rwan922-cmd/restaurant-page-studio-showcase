@@ -1,0 +1,7 @@
+AUTH_PEPPER="replace-with-a-random-secret"
+SESSION_SECRET="replace-with-a-different-random-secret"
+DEMO_OWNER_EMAIL="owner@example.com"
+DEMO_OWNER_PASSWORD_HASH="generate-with-npm-run-auth-generate"
+DEMO_STAFF_PIN_HASH="generate-with-npm-run-auth-generate"
+NOTIFICATION_MODE="demo"
+NOTIFICATION_ALLOWLIST="owner@example.com"

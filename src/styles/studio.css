@@ -1,0 +1,135 @@
+.studio-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background: oklch(0.94 0.004 25);
+}
+
+.studio-header {
+  width: min(87.5rem, 100%);
+  margin: 0 auto 2rem;
+}
+
+.studio-header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.studio-header > p:last-child {
+  color: var(--muted-dark);
+}
+
+.studio-layout {
+  display: grid;
+  width: min(87.5rem, 100%);
+  margin: auto;
+  grid-template-columns: minmax(21rem, 0.8fr) minmax(24rem, 1.2fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.studio-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-lg);
+  background: var(--surface-light);
+}
+
+.studio-form label {
+  display: grid;
+  gap: 0.4rem;
+  color: oklch(0.3 0.012 25);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.studio-form input,
+.studio-form select,
+.studio-form textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem;
+  border: 1px solid oklch(0.65 0.012 25);
+  border-radius: var(--radius-sm);
+  color: var(--ink-dark);
+  background: oklch(0.99 0 0);
+  font-weight: 500;
+}
+
+.studio-form textarea {
+  resize: vertical;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.studio-form__wide,
+.validation-errors,
+.studio-form .button {
+  grid-column: 1 / -1;
+}
+
+.validation-errors {
+  padding: 0.8rem 1rem;
+  border: 1px solid oklch(0.58 0.18 28);
+  border-radius: var(--radius-sm);
+  color: oklch(0.38 0.14 28);
+  background: oklch(0.93 0.04 28);
+  font-size: 0.875rem;
+}
+
+.validation-errors p {
+  margin: 0.25rem 0;
+}
+
+.studio-preview {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-lg);
+  background: var(--surface-light);
+}
+
+.studio-preview .restaurant-hero {
+  min-height: 25rem;
+}
+
+.studio-preview .mobile-action-dock {
+  display: none;
+}
+
+.preview-placeholder {
+  display: grid;
+  min-height: 30rem;
+  place-items: center;
+  padding: 2rem;
+  color: var(--muted-dark);
+}
+
+@media (max-width: 61.99rem) {
+  .studio-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-preview {
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .studio-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .studio-form {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

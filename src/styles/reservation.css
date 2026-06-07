@@ -1,0 +1,213 @@
+.reservation-page,
+.reservation-status-page {
+  min-height: 100vh;
+  color: var(--ink-dark);
+  background: var(--canvas-light);
+}
+
+.reservation-hero {
+  display: grid;
+  min-height: 23rem;
+  align-content: end;
+  gap: 0.7rem;
+  padding: clamp(2rem, 7vw, 6rem)
+    max(1rem, calc((100vw - var(--content-reading)) / 2));
+  color: var(--ink-light);
+  background:
+    linear-gradient(oklch(0.1 0.02 25 / 0.48), oklch(0.1 0.02 25 / 0.92)),
+    url("/media/shu-xiang/scene-5.webp") center 48% / cover;
+}
+
+.reservation-hero > a {
+  width: fit-content;
+  min-height: 2.75rem;
+  color: var(--ink-light);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.reservation-hero > p {
+  max-width: 44rem;
+  margin: 0;
+  color: oklch(0.83 0.01 25);
+  line-height: 1.65;
+}
+
+.reservation-hero h1,
+.reservation-result h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+.reservation-hero h1 span,
+.reservation-result h1 span {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.38em;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.reservation-form {
+  width: min(var(--content-reading), calc(100% - 2rem));
+  margin: clamp(2rem, 6vw, 5rem) auto;
+}
+
+.reservation-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem 1.5rem;
+}
+
+.reservation-form label,
+.counter-login label,
+.counter-settings label,
+.reservation-ticket__status label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 800;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea,
+.counter-login input,
+.counter-settings input,
+.counter-settings textarea,
+.reservation-ticket__status input {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 1px solid oklch(0.34 0.015 25);
+  border-radius: var(--radius-sm);
+  color: var(--ink-dark);
+  background: oklch(1 0 0);
+  font: inherit;
+}
+
+.reservation-form input,
+.reservation-form select,
+.counter-login input,
+.counter-settings input,
+.reservation-ticket__status input {
+  padding: 0 0.85rem;
+}
+
+.reservation-form textarea,
+.counter-settings textarea {
+  padding: 0.85rem;
+  resize: vertical;
+}
+
+.reservation-form input:disabled,
+.reservation-form select:disabled {
+  color: oklch(0.46 0.01 25);
+  background: oklch(0.92 0.004 25);
+}
+
+.reservation-form__wide {
+  grid-column: 1 / -1;
+}
+
+.reservation-form__notice {
+  max-width: 48rem;
+  margin: 1.25rem 0;
+  color: var(--muted-dark);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.form-message {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-sm);
+}
+
+.form-message--error {
+  color: oklch(0.43 0.17 28);
+  background: oklch(0.95 0.025 28);
+}
+
+.reservation-result {
+  display: grid;
+  width: min(44rem, calc(100% - 2rem));
+  min-height: 100vh;
+  align-content: center;
+  gap: 1.25rem;
+  margin: auto;
+  padding-block: 4rem;
+}
+
+.reservation-result > p {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--muted-dark);
+  line-height: 1.7;
+}
+
+.reservation-result .button {
+  width: fit-content;
+}
+
+.reservation-summary {
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.reservation-summary > div {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.5fr) 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.reservation-summary dt,
+.reservation-summary dd {
+  margin: 0;
+}
+
+.reservation-summary dt {
+  color: var(--muted-dark);
+}
+
+.reservation-summary dd {
+  font-weight: 800;
+}
+
+.reservation-loading {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  place-items: center;
+}
+
+@media (max-width: 47.99rem) {
+  .reservation-page {
+    padding-bottom: calc(var(--dock-height) + 1rem);
+  }
+
+  .reservation-hero {
+    min-height: 25rem;
+    background-position: 58% center;
+  }
+
+  .reservation-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-form__wide {
+    grid-column: auto;
+  }
+
+  .reservation-summary > div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}

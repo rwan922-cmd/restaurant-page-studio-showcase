@@ -1,0 +1,432 @@
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/fonts/barlow-condensed-600.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/fonts/barlow-condensed-700.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/fonts/barlow-condensed-800.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+}
+
+:root {
+  color: oklch(0.18 0.012 25);
+  background: oklch(0.97 0.002 25);
+  font-family:
+    "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --canvas-dark: oklch(0.14 0.012 25);
+  --canvas-raised: oklch(0.19 0.016 25);
+  --canvas-light: oklch(0.97 0.002 25);
+  --surface-light: oklch(1 0 0);
+  --ink-light: oklch(0.96 0.006 25);
+  --ink-dark: oklch(0.18 0.012 25);
+  --muted-light: oklch(0.76 0.012 25);
+  --muted-dark: oklch(0.43 0.012 25);
+  --oxblood: oklch(0.56 0.18 28);
+  --oxblood-hover: oklch(0.49 0.17 28);
+  --jade: oklch(0.53 0.095 160);
+  --line-light: oklch(1 0 0 / 0.16);
+  --line-dark: oklch(0.18 0.012 25 / 0.18);
+  --focus: oklch(0.76 0.14 157);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --content-wide: 73.75rem;
+  --content-reading: 60rem;
+  --dock-height: 4.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--canvas-light);
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.2rem;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--canvas-dark);
+  background: var(--focus);
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 180ms var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.section-label {
+  margin: 0 0 0.75rem;
+  color: var(--theme-main, var(--oxblood));
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.sales-page .section-label,
+.contact-panel .section-label {
+  color: oklch(0.76 0.13 28);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 180ms var(--ease-out),
+    border-color 180ms var(--ease-out),
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.button:hover {
+  transform: translateY(-0.125rem);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button--primary {
+  color: oklch(0.99 0 0);
+  background: var(--oxblood);
+}
+
+.button--primary:hover {
+  background: var(--oxblood-hover);
+}
+
+.button--ghost {
+  border-color: currentColor;
+  color: inherit;
+  background: transparent;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.language-toggle {
+  display: inline-flex;
+  min-width: 5.6rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-sm);
+  color: inherit;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.language-toggle span {
+  opacity: 0.58;
+}
+
+.language-toggle .is-active {
+  font-weight: 800;
+  opacity: 1;
+}
+
+.language-toggle:hover {
+  color: var(--focus);
+}
+
+.food-image {
+  position: relative;
+  overflow: hidden;
+  background: oklch(0.83 0.02 55);
+}
+
+.food-image picture,
+.food-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.food-image img {
+  object-fit: cover;
+  transform: scale(1.08);
+}
+
+.food-image__fallback {
+  display: grid;
+  min-height: 100%;
+  place-content: center;
+  padding: 1rem;
+  color: var(--muted-dark);
+  background: oklch(0.92 0.01 25);
+  text-align: center;
+}
+
+.food-image__fallback small {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.contact-panel {
+  display: grid;
+  width: min(var(--content-wide), calc(100% - 2rem));
+  margin: 0 auto 4rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  color: var(--ink-light);
+  background: var(--canvas-raised);
+}
+
+.contact-panel h2 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.contact-panel p:not(.section-label) {
+  max-width: 39rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted-light);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.contact-panel--compact {
+  width: min(var(--content-reading), calc(100% - 2rem));
+  margin-top: 4rem;
+}
+
+.qr-card {
+  width: 13.5rem;
+  margin: 0;
+  padding: 0.75rem;
+  color: var(--ink-dark);
+  background: var(--surface-light);
+  text-align: center;
+}
+
+.qr-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.qr-card figcaption {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.mobile-action-dock {
+  display: none;
+}
+
+.not-found {
+  display: grid;
+  width: min(42rem, calc(100% - 2rem));
+  min-height: 100vh;
+  margin: auto;
+  place-content: center;
+  text-align: center;
+}
+
+.not-found h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.not-found p:not(.section-label) {
+  color: var(--muted-dark);
+}
+
+.not-found .button {
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+@media (max-width: 47.99rem) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    width: min(100% - 1rem, var(--content-wide));
+  }
+
+  .qr-card {
+    width: min(100%, 18rem);
+  }
+
+  .mobile-action-dock {
+    display: grid;
+    position: fixed;
+    z-index: 40;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: calc(var(--dock-height) + env(safe-area-inset-bottom));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 0.35rem 0.35rem env(safe-area-inset-bottom);
+    border-top: 1px solid var(--line-dark);
+    color: var(--ink-dark);
+    background: oklch(0.99 0 0 / 0.96);
+    box-shadow: 0 -0.35rem 0.8rem oklch(0.12 0.01 25 / 0.12);
+    backdrop-filter: blur(0.75rem);
+  }
+
+  .mobile-action-dock a {
+    display: flex;
+    min-width: 0;
+    min-height: 4rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.05rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+  }
+
+  .mobile-action-dock a[aria-current="page"] {
+    color: var(--oxblood-hover);
+    background: oklch(0.94 0.025 28);
+  }
+
+  .mobile-action-dock__primary {
+    color: oklch(0.99 0 0);
+    background: var(--oxblood);
+  }
+
+  .mobile-action-dock__primary:visited {
+    color: oklch(0.99 0 0);
+  }
+
+  .mobile-action-dock__primary[aria-current="page"] {
+    color: oklch(0.99 0 0);
+    background: var(--oxblood);
+  }
+
+  .mobile-action-dock span {
+    font-size: 0.9375rem;
+    font-weight: 850;
+  }
+
+  .mobile-action-dock small {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

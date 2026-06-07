@@ -1,0 +1,342 @@
+.counter-login,
+.counter-page {
+  min-height: 100vh;
+  color: oklch(0.22 0.012 25);
+  background: oklch(0.96 0.004 25);
+  font-family: var(--font-body);
+}
+
+.counter-login {
+  display: grid;
+  padding: 1rem;
+  place-items: center;
+}
+
+.counter-login__panel {
+  width: min(30rem, 100%);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border-top: 0.25rem solid var(--oxblood);
+  background: oklch(1 0 0);
+  box-shadow: 0 0.4rem 0.8rem oklch(0.12 0.01 25 / 0.12);
+}
+
+.counter-login__panel > p {
+  color: var(--muted-dark);
+  line-height: 1.6;
+}
+
+.counter-login h1 {
+  margin: 0.5rem 0;
+  font-family: var(--font-body);
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.counter-login__modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1.5rem 0;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.counter-login__modes button {
+  min-height: 2.9rem;
+  border: 0;
+  color: var(--muted-dark);
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+}
+
+.counter-login__modes button[aria-pressed="true"] {
+  color: oklch(1 0 0);
+  background: var(--oxblood);
+}
+
+.counter-login form {
+  display: grid;
+  gap: 1rem;
+}
+
+.counter-header {
+  display: flex;
+  min-height: 5.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 clamp(1rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--line-dark);
+  background: oklch(1 0 0);
+}
+
+.counter-header p,
+.counter-header h1 {
+  margin: 0;
+}
+
+.counter-header p {
+  color: var(--muted-dark);
+  font-size: 0.875rem;
+}
+
+.counter-header h1 {
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+}
+
+.counter-header nav {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.counter-header button,
+.counter-tabs button,
+.reservation-ticket__actions button,
+.sound-toggle {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-sm);
+  color: var(--ink-dark);
+  background: oklch(1 0 0);
+  font: inherit;
+  font-weight: 800;
+}
+
+.counter-header button[aria-current="page"],
+.counter-tabs button[aria-selected="true"] {
+  border-color: var(--oxblood);
+  color: oklch(1 0 0);
+  background: var(--oxblood);
+}
+
+.counter-alert {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem clamp(1rem, 4vw, 3.5rem);
+  color: oklch(0.37 0.14 28);
+  background: oklch(0.94 0.035 28);
+}
+
+.counter-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem clamp(1rem, 4vw, 3.5rem);
+}
+
+.counter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.counter-toolbar > p {
+  margin: 0;
+  color: var(--muted-dark);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.reservation-queue,
+.counter-settings {
+  width: min(84rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.reservation-ticket {
+  display: grid;
+  grid-template-columns: 8rem minmax(13rem, 1fr) minmax(13rem, 0.8fr) auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.reservation-ticket:last-child {
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.reservation-ticket__time {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.reservation-ticket__time strong {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.reservation-ticket__time span,
+.reservation-ticket__guest p {
+  color: var(--muted-dark);
+  font-size: 0.9rem;
+}
+
+.reservation-ticket__guest h2,
+.reservation-ticket__guest p {
+  margin: 0 0 0.35rem;
+}
+
+.reservation-ticket__guest h2 {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+}
+
+.reservation-ticket__guest .reservation-ticket__warning {
+  width: fit-content;
+  margin-top: 0.7rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm);
+  color: oklch(1 0 0);
+  background: var(--oxblood);
+  font-weight: 800;
+}
+
+.reservation-ticket__guest .reservation-ticket__demo-note {
+  width: fit-content;
+  margin-top: 0.7rem;
+  color: var(--muted-dark);
+  font-weight: 700;
+}
+
+.reservation-ticket__status {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reservation-ticket__status > span {
+  width: fit-content;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  color: oklch(0.31 0.08 80);
+  background: oklch(0.92 0.07 80);
+  font-size: 0.8rem;
+  font-weight: 850;
+}
+
+.reservation-ticket__status > span[data-status="confirmed"],
+.reservation-ticket__status > span[data-status="seated"] {
+  color: oklch(0.31 0.08 160);
+  background: oklch(0.92 0.05 160);
+}
+
+.reservation-ticket__actions {
+  display: grid;
+  min-width: 7rem;
+  gap: 0.5rem;
+}
+
+.reservation-ticket__actions .button {
+  min-height: 2.75rem;
+}
+
+.counter-empty {
+  padding: 5rem 1rem;
+  border-top: 1px solid var(--line-dark);
+  text-align: center;
+}
+
+.counter-empty h2 {
+  font-family: var(--font-body);
+}
+
+.counter-empty p {
+  color: var(--muted-dark);
+}
+
+.counter-settings {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.6fr) 1.4fr;
+  gap: clamp(2rem, 8vw, 7rem);
+  padding-top: 3rem;
+}
+
+.counter-settings h2 {
+  margin-top: 0;
+  font-family: var(--font-body);
+  font-size: 2rem;
+}
+
+.counter-settings > div p {
+  color: var(--muted-dark);
+  line-height: 1.6;
+}
+
+.counter-settings form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.counter-settings__wide,
+.counter-settings form > .button {
+  grid-column: 1 / -1;
+}
+
+.counter-settings form > .button {
+  width: fit-content;
+}
+
+@media (max-width: 61.99rem) {
+  .reservation-ticket {
+    grid-template-columns: 7rem minmax(0, 1fr);
+  }
+
+  .reservation-ticket__status,
+  .reservation-ticket__actions {
+    grid-column: 2;
+  }
+
+  .reservation-ticket__actions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .counter-header,
+  .counter-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .counter-header {
+    padding-block: 1rem;
+  }
+
+  .counter-header nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reservation-ticket {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .reservation-ticket__status,
+  .reservation-ticket__actions {
+    grid-column: auto;
+  }
+
+  .counter-settings {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-settings form {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-settings__wide,
+  .counter-settings form > .button {
+    grid-column: auto;
+  }
+}
